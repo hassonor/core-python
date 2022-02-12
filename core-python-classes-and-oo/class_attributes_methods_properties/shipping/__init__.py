@@ -25,3 +25,9 @@ The method name allows callers to express intent, and
 allows construction to be performed with different combinations of the arguments.
 
 """
+
+"""
+Use **kwargs to thread
+arguments through named-constructor class-methods to more
+specialized subclasses.
+"""

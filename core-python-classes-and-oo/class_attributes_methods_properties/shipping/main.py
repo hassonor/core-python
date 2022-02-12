@@ -1,10 +1,7 @@
 from shipping import *
 
-c = ShippingContainer.create_empty("YML")
-print(c.bic)
+c = ShippingContainer.create_empty("YML", length_ft=20)
+print(c.volume_ft3)
 
-r1 = RefrigeratedShippingContainer("MAE", ["peas"])
-print(r1.bic)
-
-r2 = RefrigeratedShippingContainer.create_empty("YML")
-print(r2)
+r = RefrigeratedShippingContainer.create_empty("YML", length_ft=20, celsius=-10)
+print(r.volume_ft3)
