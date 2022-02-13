@@ -31,3 +31,14 @@ Use **kwargs to thread
 arguments through named-constructor class-methods to more
 specialized subclasses.
 """
+
+"""
+Summary:
+-> Use @staticmethod for methods which need neither the class nor the instance
+-> Use @classmethod for methods which
+-> Use @classmethod for the named-constructor idiom
+-> Static- and class-methods can be overridden
+-> Static- and class-methods are polymorphic when invoked through self
+-> Use the @property decorator instead of getters and setters
+-> Easily override properties by delegating to regular methods
+"""

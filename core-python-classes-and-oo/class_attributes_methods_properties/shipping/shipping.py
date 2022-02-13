@@ -4,7 +4,6 @@ import iso6346
 class ShippingContainer:
     HEIGHT_FT = 8.5
     WIDTH_FT = 8.0
-    FRIDGE_VOLUME_FT3 = 100
 
     next_serial = 1337
 
@@ -40,25 +39,19 @@ class ShippingContainer:
 
     @property
     def volume_ft3(self):
+        return self._calc_volume()
+
+    def _calc_volume(self):
         return ShippingContainer.HEIGHT_FT * ShippingContainer.WIDTH_FT * self.length_ft
-
-    @staticmethod
-    def _c_to_f(celsius):
-        return celsius * 9 / 5 + 32
-
-    @staticmethod
-    def _f_to_c(fahrenheit):
-        return (fahrenheit - 32) * 5 / 9
 
 
 class RefrigeratedShippingContainer(ShippingContainer):
     MAX_CELSIUS = 4.0
+    FRIDGE_VOLUME_FT3 = 100
 
     def __init__(self, owner_code, length_ft, contents, *, celsius, **kwargs):
         super().__init__(owner_code, length_ft, contents, **kwargs)
-        if celsius > RefrigeratedShippingContainer.MAX_CELSIUS:
-            raise ValueError("Temperature too high!")
-        self._celsius = celsius
+        self.celsius = celsius
 
     @staticmethod
     def _c_to_f(celsius):
@@ -74,8 +67,11 @@ class RefrigeratedShippingContainer(ShippingContainer):
 
     @celsius.setter
     def celsius(self, value):
+        self._set_celsius(value)
+
+    def _set_celsius(self, value):
         if value > RefrigeratedShippingContainer.MAX_CELSIUS:
-            raise ValueError("Temperature too high!")
+            raise ValueError("Temperature too hot!")
         self._celsius = value
 
     @property
@@ -86,10 +82,9 @@ class RefrigeratedShippingContainer(ShippingContainer):
     def fahrenheit(self, value):
         self.celsius = RefrigeratedShippingContainer._f_to_c(value)
 
-    @property
-    def volume_ft3(self):
+    def _calc_volume(self):
         return (
-                super().volume_ft3
+                super()._calc_volume()
                 - RefrigeratedShippingContainer.FRIDGE_VOLUME_FT3
         )
 
@@ -102,15 +97,10 @@ class RefrigeratedShippingContainer(ShippingContainer):
         )
 
 
-class HeatedRefrigeratedContainer(RefrigeratedShippingContainer):
+class HeatedRefrigeratedShippingContainer(RefrigeratedShippingContainer):
     MIN_CELSIUS = -20
 
-    @RefrigeratedShippingContainer.celsius.setter
-    def celsius(self, value):
-        if not (
-                HeatedRefrigeratedContainer.MIN_CELSIUS
-                <= value
-                <= RefrigeratedShippingContainer.MAX_CELSIUS
-        ):
-            raise ValueError("Temperature out of range")
-        self._celsius = value
+    def _set_celsius(self, value):
+        if value < HeatedRefrigeratedShippingContainer.MIN_CELSIUS:
+            raise ValueError("Temperature too cold!")
+        super()._set_celsius(value)
