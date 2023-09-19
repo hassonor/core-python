@@ -29,3 +29,5 @@ print(data["metadata"]["title"])
 print(len(data["features"]))
 print(min(data["features"], key=get_mag))
 print(max(data["features"], key=get_mag))
+
+
