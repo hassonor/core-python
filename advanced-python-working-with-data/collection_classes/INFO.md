@@ -9,5 +9,15 @@
 
 * `namedtuple` - Tuple with names fields
 * `defaultdict` - Dictionary that supplies default values
-* `Counter` - Counts distinct values
+* `counter`(Counter) - Counts distinct values
 * `deque` - Double-ended list object
+
+## Using `deque`
+
+* Shorter for "double-ended queue";pronounced "deck"
+
+```python
+from collections import deque
+
+d = deque('abcdefg')
+```
