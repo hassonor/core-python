@@ -32,8 +32,9 @@ for quake in large_quakes:
     # Append relevant data to the rows list
     rows.append([quake["properties"]["place"], quake["properties"]["mag"], quake["properties"]["url"], the_date])
 
-# Open a new CSV file to write the filtered earthquake data
-with open("large_quakes.csv", "w") as csvfile:
+# Open a new CSV file to write the filtered earthquake data.
+# Adding newline='' to ensure that rows don't have extra newlines
+with open("large_quakes.csv", "w", newline='') as csvfile:
     # Initialize a CSV writer object
     writer = csv.writer(csvfile, delimiter=",")
     # Write the header row to the CSV file
