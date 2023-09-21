@@ -1,4 +1,4 @@
-# Importing the Counter class from the collections module.
+# Importing the Counter class from the collections' module.
 from collections import Counter
 
 # Sample lists representing students in two different classes.
