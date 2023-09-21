@@ -1,12 +1,6 @@
 # Import the itertools module
 import itertools
 
-
-# Define a test function that returns True if x is less than 40
-def test_function(x):
-    return x < 40
-
-
 # Initialize a list of names
 seq1 = ["Joe", "Or", "Hasson", "John", "Mike"]
 
@@ -47,7 +41,7 @@ chain_strings = itertools.chain("ABCD", "1234")
 print(list(chain_strings))
 
 # Create an iterator that drops elements as long as the test_function is True; thereafter, returns every element
-print(list(itertools.dropwhile(test_function, vals)))
+print(list(itertools.dropwhile(lambda x: x < 40, vals)))
 
 # Create an iterator that returns elements as long as the test_function is True
-print(list(itertools.takewhile(test_function, vals)))
+print(list(itertools.takewhile(lambda x: x < 40, vals)))
