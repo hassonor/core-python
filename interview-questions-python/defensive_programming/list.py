@@ -67,3 +67,17 @@ a, b = 0, 1
 for num in range(7):  # all numbers from 0 to 6 (0 to N-1)
     print(a)
     a, b = b, a + b
+
+# Example: Split a sentence and upper only the word contain the letter 'o'
+line = "This line contains words and some have the letter o"
+my_list = list()
+
+for word in line.split():
+    if 'o' in word:
+        my_list.append(word.upper())
+
+print(my_list)
+
+# A shorter way of previous example:
+my_list2 = [word.upper() for word in line.split() if 'o' in word]
+print(my_list2)
