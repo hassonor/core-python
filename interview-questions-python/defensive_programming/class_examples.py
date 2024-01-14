@@ -1,3 +1,5 @@
+import shelve
+import pickle
 import os.path
 from os import path
 
@@ -119,7 +121,7 @@ f3 = open("files.py", "r")
 print(f3.readlines())  # list of all lines on the file
 f3.close()
 
-f4 = open("ex2.txt", "r")
+f4 = open("files/ex2.txt", "r")
 new_dict_2 = {}
 
 for line in f4:
@@ -129,9 +131,9 @@ for line in f4:
 print(new_dict_2)
 
 # Check before open a file
-if path.isfile("demofile.txt"):
+if path.isfile("files/demofile.txt"):
     # Now open the file
-    f = open("demofile.txt")
+    f = open("files/demofile.txt")
     # Can we really read it?
     if f.readable():
         """Proceed with reading the file"""
@@ -141,15 +143,38 @@ if path.isfile("demofile.txt"):
 else:
     print("File demofile.txt does not exist!")
 
-f5 = open("demofile3.txt", "w")
+f5 = open("files/demofile3.txt", "w")
 f5.write("Woops! I have deleted the content!\n")
 f5.close()
 
-f6 = open("demofile2.txt", "a")
+f6 = open("files/demofile2.txt", "a")
 f6.write("Now the file has more content!\n")
 f6.close()
 
 # Open and read the file after appending
-f7 = open("demofile2.txt", "r")
+f7 = open("files/demofile2.txt", "r")
 print(f7.read())
 f7.close()
+
+# Serialization
+sh = shelve.open("files/data")
+sh["a"] = 97
+sh["b"] = "98"
+sh.close()
+
+sh = shelve.open("files/data")
+print(sh.dict.keys())
+sh.close()
+
+foo = [1, 2, 3]
+f9 = open("files/data2", "wb")
+pickle.dump(foo, f9)
+f9.close()
+
+f9 = open("files/data2", "rb")
+print(pickle.load(f9))
+
+# Functions
+print("Word1", "Word2", "Word3", sep="*")
+print("Word1", "Word2", "Word3", end=" ")
+print("Word1", "Word2", "Word3")
