@@ -1,3 +1,6 @@
+import os.path
+from os import path
+
 s = "singing in the rain and playing in the rain are two entirely different situations"
 vowels = ['a', 'e', 'i', 'o', 'u']
 
@@ -98,3 +101,55 @@ print(new_dict)
 print(thisdict.items())
 print(thisdict.keys())
 print(thisdict.values())
+
+# Files
+f = open("zip.py", "r")  # Open a file in read mode
+# print(f.read())  # read() method return all content of the file in one piece
+# print(f.read(5))  # read just 5 chars
+print(f.readline())  # read only 1 line
+f.close()
+
+# read line by line
+f2 = open("tuple.py", "r")
+for x in f2:
+    print(x)
+f2.close()
+
+f3 = open("files.py", "r")
+print(f3.readlines())  # list of all lines on the file
+f3.close()
+
+f4 = open("ex2.txt", "r")
+new_dict_2 = {}
+
+for line in f4:
+    val, key = line.split("=")
+    new_dict_2[val] = int(key)
+
+print(new_dict_2)
+
+# Check before open a file
+if path.isfile("demofile.txt"):
+    # Now open the file
+    f = open("demofile.txt")
+    # Can we really read it?
+    if f.readable():
+        """Proceed with reading the file"""
+    else:
+        print("Unable to read file demofile.txt")
+
+else:
+    print("File demofile.txt does not exist!")
+
+f5 = open("demofile3.txt", "w")
+f5.write("Woops! I have deleted the content!\n")
+f5.close()
+
+f6 = open("demofile2.txt", "a")
+f6.write("Now the file has more content!\n")
+f6.close()
+
+# Open and read the file after appending
+f7 = open("demofile2.txt", "r")
+print(f7.read())
+f7.close()

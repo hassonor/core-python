@@ -1,3 +1,5 @@
+import sys
+
 # Example 1
 # while True:
 #     try:
@@ -11,12 +13,16 @@ try:
     f = open("example.txt")
     s = f.readline()
     i = int(s.strip())
+    f.close()
 except OSError as err:
-    print("OS error:", err)
+    print(f"OS error:{err}")
 except ValueError:
     print("Could not convert data to an integer.")
 except Exception as err:
-    print(f"Unexpected {err=},{type(err)=}")
+    print("Unexpected error:", sys.exc_info()[0])
+    raise
+else:
+    print("all ok")
 
 
 # Example 3
