@@ -105,14 +105,14 @@ print(thisdict.keys())
 print(thisdict.values())
 
 # Files
-f = open("zip.py", "r")  # Open a file in read mode
+f = open("basic/zip.py", "r")  # Open a file in read mode
 # print(f.read())  # read() method return all content of the file in one piece
 # print(f.read(5))  # read just 5 chars
 print(f.readline())  # read only 1 line
 f.close()
 
 # read line by line
-f2 = open("tuple.py", "r")
+f2 = open("basic/tuple.py", "r")
 for x in f2:
     print(x)
 f2.close()
