@@ -104,3 +104,5 @@ if __name__ == '__main__':
     print(dir(c))
     c.getRand = c.setRand
     c.getRand(21)
+    print(c.__class__)
+    print(c.__class__.__dict__.items())
