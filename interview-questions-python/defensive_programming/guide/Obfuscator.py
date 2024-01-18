@@ -56,7 +56,15 @@ class VarObfuscator(Obfuscator):
                             break
                     previous = tokval
                 if counter == 0:
-                    newvar = Obfuscator.makeRandVar()
+                    while True:
+                        newvar = Obfuscator.makeRandVar()
+                        found = False
+                        for line in code:
+                            if newvar in line:
+                                found = True
+                                break
+                        if not found:
+                            break
                     for line in code:
                         line = line.replace(previous, newvar)
                         newcode.append(line)
@@ -81,7 +89,11 @@ if __name__ == '__main__':
     b.setRand(15)
     c = MultivarObfuscator(5)
     c.setRand(15)
-    code = ['def f():', ' print("hello")', ' number1 = 100', ' number = 200', ' print(number + number2)']
+    code = ['def f():',
+            ' print("hello")',
+            ' number1 = 100',
+            ' number2 = 200',
+            ' print(number1 + number2)']
     obfuscators = [a, b, c]
     for obs in obfuscators:
         code = obs.apply(code)
