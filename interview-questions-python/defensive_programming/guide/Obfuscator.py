@@ -99,3 +99,8 @@ if __name__ == '__main__':
         code = obs.apply(code)
         for line in code:
             print(line)
+
+    c.textField = "some text"
+    print(dir(c))
+    c.getRand = c.setRand
+    c.getRand(21)
