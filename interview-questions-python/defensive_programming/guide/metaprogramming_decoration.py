@@ -8,10 +8,13 @@ if __name__ == "__main__":
 
 
     # Option 1:
-    # def square(num):
-    #     print(num * num)
-    # square = decotitle(square)
-    # square(5)
+    def square1(num):
+        print(num * num)
+
+
+    square1 = decotitle(square1)
+    square1(5)
+
 
     # Option 2: With Decorator
     @decotitle

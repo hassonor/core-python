@@ -20,8 +20,8 @@ class ClsProtector(type):
 
 
 class SampleMetaClass(type):
-    def __new__(cls, name, bases, dict):
-        newcls = type.__new__(cls, name, bases, dict)
+    def __new__(cls, name, bases, _dict):
+        newcls = type.__new__(cls, name, bases, _dict)
         newcls.value = 110
         newcls.title = "This is an example"
         return newcls

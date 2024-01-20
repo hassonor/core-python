@@ -33,6 +33,18 @@ class ClsProtector(type):
         # Return the newly created class.
         return newcls
 
+        # Override the __call__ method, which is called when an instance of the class is created.
+
+    def __call__(cls, *args, **kwargs):
+        # Check for any new methods that weren't in the original class definition.
+        currentDir = dir(cls)
+        for attr in currentDir:
+            if callable(getattr(cls, attr)) and attr not in cls.__originalDir__:
+                # Raise an error or print a warning if a new method has been added.
+                raise TypeError(f"New method {attr} added to class {cls.__name__} after its definition.")
+        # Create an instance of the class if no new methods were added.
+        return super(ClsProtector, cls).__call__(*args, **kwargs)
+
 
 class Replicator:
     # deco is a decorator method. It takes a function 'f' as input.
@@ -68,7 +80,7 @@ class Replicator:
                 setattr(cls, attr, self.deco(item))
 
 
-class Tester:
+class Tester(metaclass=ClsProtector):
     def first(self, obj):
         print("Tester:first " + str(obj))
 
@@ -76,7 +88,7 @@ class Tester:
         print("Tester:second " + str(obj))
 
 
-class Checker:
+class Checker(metaclass=ClsProtector):
     def go(self, obj):
         print("Checker:go " + str(obj))
 
