@@ -33,7 +33,7 @@ class Vector:
         """
         Return False if the vector is at the origin, else True.
         """
-        return bool(abs(self))
+        return bool(abs(self))  # Same as bool(self.x or self.y)
 
     def __add__(self, other):
         """
@@ -60,3 +60,14 @@ class Vector:
         if not isinstance(scalar, (int, float)):
             raise TypeError(f"Multiplication with non-numeric type '{type(scalar).__name__}'")
         return Vector(self.x * scalar, self.y * scalar)
+
+
+if __name__ == "__main__":
+    v1 = Vector(1, 3)
+    v2 = Vector(6, 2)
+    v3 = v1 + v2
+    v4 = v3 * 5
+    print("v1:", v1)
+    print("v2:", v2)
+    print("v3:", v3)
+    print("v4:", str(v4))
