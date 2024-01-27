@@ -41,15 +41,15 @@ print(p1, p2)
 p3 = p1 + p2
 print(p3)
 
-# Subtract p1 from p2 and display the result
+# Subtract flask_project1 from p2 and display the result
 p4 = p2 - p1
 print(p4)
 
-# Update p1 in-place by adding p2
+# Update flask_project1 in-place by adding p2
 p1 += p2
 print(p1)
 
-# Multiply p1 by a scalar (2) and display the result
+# Multiply flask_project1 by a scalar (2) and display the result
 p5 = p1 * 2
 print(p5)
 

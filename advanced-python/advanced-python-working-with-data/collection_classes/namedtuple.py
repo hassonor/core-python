@@ -13,12 +13,12 @@ p2 = Point(30, 40)
 print(p1, p2)
 
 # Accessing the individual fields of the namedtuples using dot notation
-print(p1.x, p1.y)  # This will print the x and y values of p1
+print(p1.x, p1.y)  # This will print the x and y values of flask_project1
 print(p2.x, p2.y)  # This will print the x and y values of p2
 
 # Using the `_replace()` method of namedtuples to create a new Point with modified field values.
-# Here, we're updating the x value of p1.
+# Here, we're updating the x value of flask_project1.
 p1 = p1._replace(x=100)
 
-# Printing the updated p1 value
+# Printing the updated flask_project1 value
 print(p1)
