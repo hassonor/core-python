@@ -22,11 +22,16 @@ with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
 
                 # Decode received message
                 text = data.decode('utf-8')
-                print("Received Messages: ", text)
+                print("Received Message: ", text)
+                print("Enter message ")
+                reply = input()
+                replydata = bytearray(reply, "utf-8")
+                newdata = bytearray(1024)
 
-                # Send a response
-                response = "Message received: " + text
-                conn.sendall(response.encode('utf-8'))
+                for i in range(min(len(replydata), len(newdata))):
+                    newdata[i] = replydata[i]
+
+                conn.sendall(newdata)
 
     except KeyboardInterrupt:
         print("\nServer is shutting down.")
