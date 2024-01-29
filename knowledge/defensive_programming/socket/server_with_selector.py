@@ -32,4 +32,7 @@ while True:
     events = sel.select()
     for key, mask in events:
         callback = key.data
+
+        # will invoke accept or read function
+        # if callback is 'accept' the arg should be socket type if 'read' should be connection type.
         callback(key.fileobj, mask)
