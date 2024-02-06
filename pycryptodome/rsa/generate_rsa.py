@@ -19,7 +19,7 @@ encrypted_key = key.export_key(passphrase=secret_code,
 
 # Write the encrypted private key to a binary file.
 # The key is binary data, so the file is opened in binary write mode ('wb').
-with open("aes/cbc_encrypt_decrypt/rsa_key.bin", "wb") as f:
+with open("../aes/cbc_encrypt_decrypt/rsa_key.bin", "wb") as f:
     f.write(encrypted_key)
 
 # Extract the public key from the key pair and export it.
