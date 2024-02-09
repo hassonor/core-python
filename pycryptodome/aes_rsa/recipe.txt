@@ -1,0 +1,15 @@
+Sender:
+1. Get file to encrypt/send
+2. Create a random AES symmetric key
+3. Get the recipients public RSA key
+4. Encrypt the AES key with pub key (RSA asymmetric)
+5. Use AES key to encrypt file (AES symmetric)
+6. Write both encrypted AES key and encrypted file to one bundled file (Not Must)
+7. Send bundled file to recipient
+
+Recipient:
+1. Read first 16 bytes of bundled file (get RSA encrypted AES key)
+2. Read next 16 bytes and get IV
+3. Decrypt AES key with private RSA key
+4. Use AES key to decrypt rest of bundled file
+6. Open file
