@@ -1,0 +1,8 @@
+Tel-Aviv University, Tel-Aviv, 4000
+Ben-Gurion University, Beer-Sheva, 9000
+Open University, Ra'anana, 8000 courses:
+Economic, 40
+Computer Science, 35
+Psychology, 32
+done courses
+Technion, Haifa, 3800
