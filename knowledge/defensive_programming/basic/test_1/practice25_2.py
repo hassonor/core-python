@@ -73,3 +73,42 @@ def read_file(file_name):
 
 
 read_file("universities.txt")
+
+mylist = ["everybody", "in", "this", "group", "should", "be", "able", "to", "dance", "salsa", "but", "only", "some",
+          "can", "dance", "bachata"]
+
+my_dict = dict()
+for word in mylist:
+    if word:
+        my_dict[word] = len(word)
+
+print(my_dict)
+
+phrase = ""
+for index in range(len(mylist)):
+    if index == 0 or mylist[index][-1] == 'a':
+        phrase = phrase + mylist[index].capitalize()
+    else:
+        phrase = phrase + mylist[index]
+
+print(phrase)
+
+names = ("Tom", "Daniel", "Ofir", "Ofri", "Andrea", "Silvia", "Manuel", "Jessica")
+pairs = []
+for i in range(0, len(names) - 1, 2):
+    pairs.append((names[i], names[i + 1]))
+
+with open("someFile.txt", "w") as f:
+    for pair in pairs:
+        f.write(pair.__repr__() + "\n")
+
+# Option B:
+couples = zip(*[iter(names)] * 2)
+
+text = "\n".join(f"{couple[0]} {couple[1]}" for couple in couples)
+
+try:
+    with open("someOtherFile.txt", "w") as f:
+        f.write(text)
+except:
+    print("Error...")
