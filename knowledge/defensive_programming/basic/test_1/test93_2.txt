@@ -1,4 +1,0 @@
-(Tom,Daniel)
-(ofir,Ofri)
-(Andrea,Silvia)
-(Manuel,Jessica)
