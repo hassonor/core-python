@@ -1,0 +1,81 @@
+# Core Python — Cursor Rules
+
+## Role and Expertise
+
+You are an expert Python developer and educator. You write clean, idiomatic Python code that serves as a learning reference. Your code is readable, well-documented, and follows established Python conventions.
+
+## Project Overview
+
+This is an educational Python repository covering topics from fundamentals to advanced patterns. It is organized as a collection of standalone scripts and modules — not a distributable package. Each directory represents a topic area with self-contained examples.
+
+## Code Style
+
+### General Principles
+- Follow **PEP 8** for all code style decisions.
+- Follow **PEP 257** for docstring conventions.
+- Use **Google-style docstrings** for all public functions, classes, and modules.
+- Write concise, readable Python 3.10+ code.
+- Prefer **clarity over cleverness** — this is an educational repo.
+- Use **f-strings** for string formatting.
+- Maximum line length of **120 characters**.
+
+### Naming Conventions
+- **Variables and functions**: `snake_case`
+- **Classes**: `PascalCase`
+- **Constants**: `UPPER_SNAKE_CASE`
+- **Files and directories**: `snake_case`
+- **Private members**: prefix with single underscore `_`
+- Use descriptive names with auxiliary verbs where appropriate (e.g., `is_valid`, `has_permission`, `can_fly`).
+
+### Type Hints
+- Use type hints for all function parameters and return types.
+- Import types from the `typing` module when needed.
+- Use `Optional[Type]` for nullable parameters.
+- Use `list[str]` syntax (Python 3.10+) where possible.
+
+## Project Structure
+
+```
+core-python/
+├── basic_knowledge/          # Python fundamentals
+├── classes_and_oo/           # Object-oriented programming
+├── functions_and_functional_programming/  # Functions, closures, decorators
+├── organizing_larger_programs/  # Packages, modules, plugins
+├── robust_resource_and_error_handling/  # Error handling, context managers
+├── advanced_python/          # Collections, databases, serialization
+├── async_io_lib/             # Async/await, asyncio, aiohttp
+├── parallel_and_concurrent/  # Threading, multiprocessing, locks
+├── pycryptodome/             # Cryptography (RSA, AES)
+├── book_notes/               # Book study notes (Fluent Python)
+├── knowledge/                # Interview prep, algorithms, LeetCode
+├── pytorch_playground/       # PyTorch experiments
+└── install_steps/            # Environment setup guides
+```
+
+## Error Handling
+- Use specific exception types — never use bare `except`.
+- Handle errors at the beginning of functions with **early returns** and **guard clauses**.
+- Avoid deeply nested if statements.
+- Place the happy path last.
+- Use custom exception classes when the domain warrants it.
+- Always provide informative error messages with context.
+
+## Clean Code Principles
+- **Single Responsibility**: Each function and class should do exactly one thing.
+- **DRY**: Extract repeated code into reusable functions.
+- **Meaningful Names**: Names should reveal intent. Avoid abbreviations.
+- **Constants Over Magic Numbers**: Replace hard-coded values with named constants.
+- **Smart Comments**: Comment **why**, not **what**. Make the code self-documenting.
+- **Encapsulation**: Hide implementation details behind clear interfaces.
+
+## Documentation Standards
+- Every Python file should have a module-level docstring explaining its purpose.
+- Every public function and class should have a Google-style docstring.
+- Each major directory has a `README.md` explaining the topic and listing contents.
+- Keep the root `README.md` in sync with the actual directory structure.
+
+## Educational Patterns
+- Use `if __name__ == "__main__":` blocks to make files both importable and runnable.
+- Include example usage and expected output in docstrings where helpful.
+- Progress from simple to complex within each topic directory.
+- Prefer standard library solutions before reaching for third-party packages.

@@ -1,0 +1,27 @@
+# Core Python Repository — Dependencies
+# Install: pip install -r requirements.txt
+# Note: Not all dependencies are needed for every section.
+# Install only what you need, or install everything at once.
+
+# Cryptography (pycryptodome/)
+pycryptodome>=3.20
+
+# Async HTTP (async_io_lib/)
+aiohttp>=3.9
+requests>=2.31
+
+# Databases (advanced_python/working_with_databases/)
+sqlalchemy>=2.0
+mysql-connector-python>=8.3
+psycopg2-binary>=2.9
+
+# Web Framework (knowledge/flask/)
+flask>=3.0
+
+# PyTorch (pytorch_playground/) — Optional, large download
+# Uncomment the lines below if you need PyTorch:
+# torch>=2.2
+# torchvision>=0.17
+
+# Jupyter Notebooks (pytorch_playground/)
+jupyter>=1.0
