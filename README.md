@@ -206,38 +206,54 @@ Machine learning experiments with PyTorch and Jupyter notebooks.
 
 ## LeetCode Solutions
 
-Algorithm solutions organized by difficulty.
+**42 solutions** organized by difficulty. Each includes problem description, approach, complexity analysis, and tests. [Full list](knowledge/leetcode/).
 
-### Easy
-| # | Problem | Solution |
+### Easy (26 problems)
+| # | Problem | Approach |
 |---|---------|----------|
-| 1 | Two Sum | [two_sum.py](knowledge/leetcode/easy/1_two_sum.py) |
-| 9 | Palindrome Number | [palindrome_number.py](knowledge/leetcode/easy/9_palindrome_number.py) |
-| 20 | Valid Parentheses | [valid_parentheses.py](knowledge/leetcode/easy/20_valid_parentheses.py) |
-| 35 | Search Insert Position | [search_insert_position.py](knowledge/leetcode/easy/35_search_insert_position.py) |
-| 67 | Add Binary | [add_binary.py](knowledge/leetcode/easy/67_add_binary.py) |
-| 70 | Climbing Stairs | [climbing_stairs.py](knowledge/leetcode/easy/70_climbing_stairs.py) |
-| 83 | Remove Duplicates from Sorted List | [remove_duplicates.py](knowledge/leetcode/easy/83_remove_duplicates_from_sorted_list.py) |
-| 88 | Merge Sorted Array | [merge_sorted_array.py](knowledge/leetcode/easy/88_merge_sorted_array.py) |
-| 118 | Pascal's Triangle | [pascals_triangle.py](knowledge/leetcode/easy/118_pascals_triangle.py) |
-| 190 | Reverse Bits | [reverse_bits.py](knowledge/leetcode/easy/190_reverse_bits.py) |
-| 217 | Contains Duplicate | [contains_duplicate.py](knowledge/leetcode/easy/217_contains_duplicate.py) |
-| 231 | Power of Two | [power_of_two.py](knowledge/leetcode/easy/231_power_of_two.py) |
-| 2824 | Count Pairs Less Than Target | [count_pairs.py](knowledge/leetcode/easy/2824_count_pairs_whose_sum_is_less_than_target.py) |
-| — | Design an Ordered Stream | [ordered_stream.py](knowledge/leetcode/easy/design_an_ordered_stream.py) |
-| — | How Many Numbers Are Smaller | [smaller_numbers.py](knowledge/leetcode/easy/how_many_numbers_are_smaller_than_the_current_number.py) |
-| — | Is Palindrome | [is_palindrome.py](knowledge/leetcode/easy/is_palindrome.py) |
-| — | Jewels and Stones | [jewels_and_stones.py](knowledge/leetcode/easy/jewels_and_stones.py) |
-| — | Merge Two Sorted Lists | [merge_two_sorted_lists.py](knowledge/leetcode/easy/merge_two_sorted_lists.py) |
-| — | Number of Good Pairs | [good_pairs.py](knowledge/leetcode/easy/number_of_goods_pairs.py) |
-| — | Palindrome Number | [palindrome_num.py](knowledge/leetcode/easy/palindrome_num.py) |
-| — | Roman to Integer | [roman_to_integer.py](knowledge/leetcode/easy/roman_to_integer.py) |
-| — | Single Row Keyboard | [single_row_keyboard.py](knowledge/leetcode/easy/single_row_keyboard.py) |
+| 1 | [Two Sum](knowledge/leetcode/easy/1_two_sum.py) | Hash map |
+| 9 | [Palindrome Number](knowledge/leetcode/easy/9_palindrome_number.py) | Math |
+| 20 | [Valid Parentheses](knowledge/leetcode/easy/20_valid_parentheses.py) | Stack |
+| 35 | [Search Insert Position](knowledge/leetcode/easy/35_search_insert_position.py) | Binary search |
+| 53 | [Maximum Subarray](knowledge/leetcode/easy/53_maximum_subarray.py) | Kadane's algorithm |
+| 67 | [Add Binary](knowledge/leetcode/easy/67_add_binary.py) | Math |
+| 70 | [Climbing Stairs](knowledge/leetcode/easy/70_climbing_stairs.py) | Dynamic programming |
+| 83 | [Remove Duplicates from Sorted List](knowledge/leetcode/easy/83_remove_duplicates_from_sorted_list.py) | Linked list |
+| 88 | [Merge Sorted Array](knowledge/leetcode/easy/88_merge_sorted_array.py) | Two pointers |
+| 118 | [Pascal's Triangle](knowledge/leetcode/easy/118_pascals_triangle.py) | Dynamic programming |
+| 121 | [Best Time to Buy and Sell Stock](knowledge/leetcode/easy/121_best_time_to_buy_and_sell_stock.py) | One pass |
+| 136 | [Single Number](knowledge/leetcode/easy/136_single_number.py) | XOR |
+| 141 | [Linked List Cycle](knowledge/leetcode/easy/141_linked_list_cycle.py) | Floyd's tortoise & hare |
+| 169 | [Majority Element](knowledge/leetcode/easy/169_majority_element.py) | Boyer-Moore voting |
+| 206 | [Reverse Linked List](knowledge/leetcode/easy/206_reverse_linked_list.py) | Iterative pointers |
+| 226 | [Invert Binary Tree](knowledge/leetcode/easy/226_invert_binary_tree.py) | Recursion |
+| 242 | [Valid Anagram](knowledge/leetcode/easy/242_valid_anagram.py) | Character counting |
 
-### Medium
-| # | Problem | Solution |
+...and [more easy problems](knowledge/leetcode/README.md#easy)
+
+### Medium (11 problems)
+| # | Problem | Approach |
 |---|---------|----------|
-| 36 | Valid Sudoku | [valid_sudoku.py](knowledge/leetcode/medium/36_valid_sudoku.py) |
+| 3 | [Longest Substring Without Repeating Characters](knowledge/leetcode/medium/3_longest_substring_without_repeating.py) | Sliding window |
+| 11 | [Container With Most Water](knowledge/leetcode/medium/11_container_with_most_water.py) | Two pointers |
+| 15 | [3Sum](knowledge/leetcode/medium/15_three_sum.py) | Sort + two pointers |
+| 33 | [Search in Rotated Sorted Array](knowledge/leetcode/medium/33_search_in_rotated_sorted_array.py) | Modified binary search |
+| 36 | [Valid Sudoku](knowledge/leetcode/medium/36_valid_sudoku.py) | Hash sets |
+| 49 | [Group Anagrams](knowledge/leetcode/medium/49_group_anagrams.py) | Sorted key hash map |
+| 56 | [Merge Intervals](knowledge/leetcode/medium/56_merge_intervals.py) | Sort + merge |
+| 102 | [Binary Tree Level Order Traversal](knowledge/leetcode/medium/102_binary_tree_level_order_traversal.py) | BFS |
+| 152 | [Maximum Product Subarray](knowledge/leetcode/medium/152_maximum_product_subarray.py) | Track min/max |
+| 200 | [Number of Islands](knowledge/leetcode/medium/200_number_of_islands.py) | DFS flood fill |
+| 238 | [Product of Array Except Self](knowledge/leetcode/medium/238_product_of_array_except_self.py) | Prefix/suffix products |
+
+### Hard (5 problems)
+| # | Problem | Approach |
+|---|---------|----------|
+| 23 | [Merge k Sorted Lists](knowledge/leetcode/hard/23_merge_k_sorted_lists.py) | Min-heap |
+| 42 | [Trapping Rain Water](knowledge/leetcode/hard/42_trapping_rain_water.py) | Two pointers |
+| 76 | [Minimum Window Substring](knowledge/leetcode/hard/76_minimum_window_substring.py) | Sliding window |
+| 124 | [Binary Tree Maximum Path Sum](knowledge/leetcode/hard/124_binary_tree_maximum_path_sum.py) | DFS |
+| 295 | [Find Median from Data Stream](knowledge/leetcode/hard/295_find_median_from_data_stream.py) | Two heaps |
 
 ---
 
