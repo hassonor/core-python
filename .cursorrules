@@ -14,7 +14,7 @@ This is an educational Python repository covering topics from fundamentals to ad
 - Follow **PEP 8** for all code style decisions.
 - Follow **PEP 257** for docstring conventions.
 - Use **Google-style docstrings** for all public functions, classes, and modules.
-- Write concise, readable Python 3.10+ code.
+- Write concise, readable Python 3.14+ code.
 - Prefer **clarity over cleverness** — this is an educational repo.
 - Use **f-strings** for string formatting.
 - Maximum line length of **120 characters**.
@@ -31,7 +31,7 @@ This is an educational Python repository covering topics from fundamentals to ad
 - Use type hints for all function parameters and return types.
 - Import types from the `typing` module when needed.
 - Use `Optional[Type]` for nullable parameters.
-- Use `list[str]` syntax (Python 3.10+) where possible.
+- Use `list[str]` syntax (Python 3.9+) and `X | None` union syntax (Python 3.10+) where possible.
 
 ## Project Structure
 

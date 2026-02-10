@@ -1,6 +1,6 @@
 # Core Python Concepts & Patterns
 
-[![Python](https://img.shields.io/badge/Python-3.10+-blue.svg)](https://www.python.org/downloads/)
+[![Python](https://img.shields.io/badge/Python-3.14-blue.svg)](https://www.python.org/downloads/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 
 A comprehensive Python learning repository covering everything from fundamentals to advanced patterns, concurrency, cryptography, databases, and interview preparation. Each section contains standalone, runnable examples designed for learning and reference.
